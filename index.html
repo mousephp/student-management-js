@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	.trStudent:hover{
+	    background-color: aquamarine;
+	    cursor: pointer;
+	}
+</style>
+
+<body>	
+<div class="jumbotron">
+	<h1 style="margin: 0px 0 0 0;text-align: center; color:#00ff37;font-weight: 700; font-family: serif; ">QUẢN LÝ SINH VIÊN</h1>
+</div>
+
+	<div class="container">		
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<form action="">
+				    <div class="form-group">
+				      <label for="email">Nhập MaSV</label>
+				      <input type="number" class="form-control" id="code" placeholder="Nhập MaSV" name="code">
+				    </div>
+				    <div class="form-group">
+				      <label for="pwd">Họ tên</label>
+				      <input type="text" class="form-control" id="name" placeholder="Nhập Họ tên" name="pswd">
+				    </div>
+
+ 					<div class="form-group">
+				      <label for="email">CMND</label>
+				      <input type="number" class="form-control" id="cmnn" placeholder="Nhập CMND" name="cmnn">
+				    </div>
+				    <div class="form-group">
+				      <label for="pwd">Điện thoại</label>
+				      <input type="text" class="form-control" id="phone" placeholder="Nhập SDT" name="phone">
+				    </div>
+ 					<div class="form-group">
+				      <label for="email">Email</label>
+				      <input type="text" class="form-control" id="email" placeholder="Nhập Email" name="email">
+				    </div>				    
+ 					<div class="form-group">
+				      <label for="pwd">php</label>
+				      <input type="text" class="form-control" id="php" placeholder="Nhập điểm môn php" name="php">
+				    </div>
+ 					<div class="form-group">
+				      <label for="pwd">java</label>
+				      <input type="text" class="form-control" id="java" placeholder="Nhập điểm môn java" name="java">
+				    </div>
+ 					<div class="form-group">
+				      <label for="pwd">python</label>
+				      <input type="text" class="form-control" id="python" placeholder="Nhập điểm môn python" name="python">
+				    </div>				  
+					<div class="text-center">
+						<button type="button" class="btn btn-primary btn-lg text-center" onclick="createStudent()">Thêm</button>
+						<button type="button" class="btn btn-success btn-lg text-center" onclick="updateStudent()">Lưu</button>
+					</div>
+			  </form>
+			</div>
+		</div>
+
+	<hr>
+	<h1 style="margin: 20px 0 0 0;text-align: center; color:#00ff37;font-weight: 700; font-family: serif; ">DANH SÁCH SINH VIÊN</h1>
+	<hr>
+
+ 		<div class="row">
+ 			<div class="col-md-12">
+ 				<div class="text-center">
+ 					<button class="btn btn-success  float-none" onclick="SetStorage()">Lưu storage</button>
+					<button class="btn btn-primary  float-none" onclick="GetStorage()">Lấy storage</button>
+					<button class="btn btn-danger  float-none" onclick="destroyStudent()">Xóa sinh viên</button>	
+ 				</div>
+		 		
+				<br>
+
+			 	<div class="input-group">
+			 		<input type="text" id="keyword" onkeyup="searchStudent()" onchange="searchStudent()" class="form-control" placeholder="Nhập vào họ tên ...">
+			 		<span class="input-group-btn">
+			 			<button class="btn btn-secondary" onclick="searchStudent()" type="button">Tìm kiếm</button>
+			 		</span>
+			 	</div>
+			 	<br />
+			 	<div class="alert alert-success" id="ThongBao"></div>
+		 	</div>
+	 	</div>
+
+
+		<div class="row">
+			<div class="col-md-12">
+				<table class="table ">
+				    <thead>
+				      <tr>
+				       	<th></th>
+				        <th>MaSV</th>
+				        <th>HoTen</th>
+				        <th>Email</th>
+				        <th>CMND</th>
+				        <th>Điện thoại</th>
+				        <th>Điểm TB</th>
+				        <th>Xếp loại</th>
+				        <th>Edit</th>
+				        <th>Delete</th>
+				      </tr>
+				    </thead>
+				    <tbody id="tbodyStudent">
+				      	<td></td>
+						<td>giatri cot 1</td>
+						<td>giatri cot 2</td>
+						<td>giatri cot 3</td>
+				    </tbody>
+  				</table>
+			</div>
+		</div>
+	</div>
+	
+</body>
+
+
+<script type="text/javascript" src="student.js"></script>
+<script type="text/javascript" src="liststudents.js"></script>
+<script type="text/javascript" src="validate.js"></script>
+<script type="text/javascript" src="main.js"></script>
+
+</html>
